@@ -153,6 +153,8 @@ function animate() {
         // Left
         var ampL = spectrumLeft[i];
         var xL = map(log(ampL), 0, 15, 0, width);
+        // var xL = map(log(ampL), 0, log(spectrumLeft.length), 0, width);
+        // 15 - strange second param
         // color spectre
         if (!isFinite(xL)) xL = 1;
         var clr = colorScale(xL);
@@ -190,7 +192,7 @@ function animate() {
         if (showAdvPan) {
             if (xL > 1 && xR > 1) {
                 // coloring
-                var clrLR = colorScale((xR + xL) * .2)
+                var clrLR = colorScale((xR + xL) * 0.8)
 
                 stroke(clrLR);
                 strokeWeight(lh)
@@ -199,7 +201,7 @@ function animate() {
                 var clrLR = colorScale((xR + xL) * 1.3)
                 stroke(clrLR);
                 strokeWeight(lh)
-                line(width / 2 + xR - xL / 3, this.specCrop - i * lineHeight, width / 2 - xL + xR / 3, this.specCrop - i * lineHeight);
+                line(width / 2 + xR + xL / 3, this.specCrop - i * lineHeight, width / 2 - xL - xR / 3, this.specCrop - i * lineHeight);
             } //+ xL / 5 //- xR / 5
         }
     }
