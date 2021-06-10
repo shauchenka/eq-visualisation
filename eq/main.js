@@ -8,8 +8,8 @@ var gui;
 // color scales
 var interpolators = [
     // These are from d3-scale.
-    "Viridis",
     "Inferno",
+    "Viridis",
     "Magma",
     "Plasma",
     "Warm",
